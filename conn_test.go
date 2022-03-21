@@ -17,7 +17,6 @@ import (
 	"testing"
 	"time"
 
-	"github.com/gin-gonic/gin"
 	"github.com/golang/protobuf/ptypes"
 	"github.com/golang/protobuf/ptypes/duration"
 
@@ -493,38 +492,4 @@ func echoServer(w http.ResponseWriter, r *http.Request, opts *websocket.AcceptOp
 
 	err = wstest.EchoLoop(r.Context(), c)
 	return assertCloseStatus(websocket.StatusNormalClosure, err)
-}
-
-func TestGin(t *testing.T) {
-	t.Parallel()
-
-	gin.SetMode(gin.ReleaseMode)
-	r := gin.New()
-	r.GET("/", func(ginCtx *gin.Context) {
-		err := echoServer(ginCtx.Writer, ginCtx.Request, nil)
-		if err != nil {
-			t.Error(err)
-		}
-	})
-
-	s := httptest.NewServer(r)
-	defer s.Close()
-
-	ctx, cancel := context.WithTimeout(context.Background(), time.Second*30)
-	defer cancel()
-
-	c, _, err := websocket.Dial(ctx, s.URL, nil)
-	assert.Success(t, err)
-	defer c.Close(websocket.StatusInternalError, "")
-
-	err = wsjson.Write(ctx, c, "hello")
-	assert.Success(t, err)
-
-	var v interface{}
-	err = wsjson.Read(ctx, c, &v)
-	assert.Success(t, err)
-	assert.Equal(t, "read msg", "hello", v)
-
-	err = c.Close(websocket.StatusNormalClosure, "")
-	assert.Success(t, err)
 }
