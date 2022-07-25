@@ -20,14 +20,14 @@ import (
 	"github.com/golang/protobuf/ptypes"
 	"github.com/golang/protobuf/ptypes/duration"
 
-	"nhooyr.io/websocket"
-	"nhooyr.io/websocket/internal/errd"
-	"nhooyr.io/websocket/internal/test/assert"
-	"nhooyr.io/websocket/internal/test/wstest"
-	"nhooyr.io/websocket/internal/test/xrand"
-	"nhooyr.io/websocket/internal/xsync"
-	"nhooyr.io/websocket/wsjson"
-	"nhooyr.io/websocket/wspb"
+	"github.com/switchupcb/websocket"
+	"github.com/switchupcb/websocket/errd"
+	"github.com/switchupcb/websocket/test/assert"
+	"github.com/switchupcb/websocket/test/wstest"
+	"github.com/switchupcb/websocket/test/xrand"
+	"github.com/switchupcb/websocket/wsjson"
+	"github.com/switchupcb/websocket/wspb"
+	"github.com/switchupcb/websocket/xsync"
 )
 
 func TestConn(t *testing.T) {

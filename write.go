@@ -15,7 +15,7 @@ import (
 
 	"github.com/klauspost/compress/flate"
 
-	"nhooyr.io/websocket/internal/errd"
+	"github.com/switchupcb/websocket/errd"
 )
 
 // Writer returns a writer bounded by the context that will write

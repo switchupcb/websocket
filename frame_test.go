@@ -17,7 +17,7 @@ import (
 	"github.com/gobwas/ws"
 	_ "github.com/gorilla/websocket"
 
-	"nhooyr.io/websocket/internal/test/assert"
+	"github.com/switchupcb/websocket/test/assert"
 )
 
 func TestHeader(t *testing.T) {

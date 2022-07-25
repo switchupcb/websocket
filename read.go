@@ -13,8 +13,8 @@ import (
 	"strings"
 	"time"
 
-	"nhooyr.io/websocket/internal/errd"
-	"nhooyr.io/websocket/internal/xsync"
+	"github.com/switchupcb/websocket/errd"
+	"github.com/switchupcb/websocket/xsync"
 )
 
 // Reader reads from the connection until there is a WebSocket

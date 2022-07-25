@@ -11,7 +11,7 @@ import (
 	"log"
 	"time"
 
-	"nhooyr.io/websocket/internal/errd"
+	"github.com/switchupcb/websocket/errd"
 )
 
 // Close performs the WebSocket close handshake with the given status code and reason.

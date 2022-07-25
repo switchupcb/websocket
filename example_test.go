@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"time"
 
-	"nhooyr.io/websocket"
-	"nhooyr.io/websocket/wsjson"
+	"github.com/switchupcb/websocket"
+	"github.com/switchupcb/websocket/wsjson"
 )
 
 func ExampleAccept() {

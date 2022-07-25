@@ -14,7 +14,7 @@ import (
 	"testing"
 	"time"
 
-	"nhooyr.io/websocket/internal/test/assert"
+	"github.com/switchupcb/websocket/test/assert"
 )
 
 func TestBadDials(t *testing.T) {
